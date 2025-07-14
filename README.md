@@ -1,0 +1,1 @@
+# not-ortalama-ge-me-kalma
