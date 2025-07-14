@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int ogrenciSayisi, dersSayisi = 3;
+    
+    cout << "Ogrenci sayisini girin: ";
+    cin >> ogrenciSayisi;
+
+    float notlar[ogrenciSayisi][dersSayisi];
+    float ogrenciOrtalamalari[ogrenciSayisi];
+    float toplam = 0;
+
+    for (int i = 0; i < ogrenciSayisi; i++) {
+        float ogrenciToplam = 0;
+        cout << "\n" << i + 1 << ". ogrencinin notlarini girin:\n";
+        for (int j = 0; j < dersSayisi; j++) {
+            cout << "  Ders " << j + 1 << ": ";
+            cin >> notlar[i][j];
+            ogrenciToplam += notlar[i][j];
+        }
+        ogrenciOrtalamalari[i] = ogrenciToplam / dersSayisi;
+        toplam += ogrenciOrtalamalari[i];
+    }
+
+    cout << "\n--- Ogrenci Sonucları ---\n";
+    for (int i = 0; i < ogrenciSayisi; i++) {
+        cout << i + 1 << ". Ogrenci Ortalamasi: " << ogrenciOrtalamalari[i];
+        if (ogrenciOrtalamalari[i] >= 50)
+            cout << " -> GECTI\n";
+        else
+            cout << " -> KALDI\n";
+    }
+
+    float sinifOrtalamasi = toplam / ogrenciSayisi;
+    cout << "\nSinif Ortalamasi: " << sinifOrtalamasi << endl;
+
+    return 0;
+}
