@@ -1,1 +1,1 @@
-# not-ortalama-ge-me-kalma
+# not-ortalama/gecme-kalma
